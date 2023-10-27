@@ -12,6 +12,7 @@ namespace Proyecto__AplicacionB
 {
     public partial class registar : Form
     {
+        List<ClaseLista> MiLista = new List<ClaseLista>(); 
         public registar()
         {
             InitializeComponent();
@@ -45,12 +46,22 @@ namespace Proyecto__AplicacionB
                 {
                     return;
                 }
+               
+                if (Existe(txtcontrol.Text))
+                {
+                    errorProvider1.SetError(txtcontrol, "El  numero de control usado ya existe  ");
+                    txtcontrol.Focus();
+                    return;
+
+                }
+                errorProvider1.SetError(txtcontrol, "");
+               
 
 
 
 
 
-                    DataGridViewRow renglon = (DataGridViewRow)dgvDatosEstudiante.Rows[0].Clone();
+                DataGridViewRow renglon = (DataGridViewRow)dgvDatosEstudiante.Rows[0].Clone();
                 renglon.Cells[0].Value = txtcontrol.Text;
                 renglon.Cells[1].Value = txtnombre.Text;
                 renglon.Cells[2].Value = txtapellidos.Text;
@@ -66,12 +77,22 @@ namespace Proyecto__AplicacionB
             }
         }
 
+        private bool Existe(string Matricula)
+        {
+            foreach (ClaseLista  MiLista  in MiLista )
+            {
+
+            }
+        }
+
         private bool ValidarMatricula()
         {
             int Matricula;
             if (!int.TryParse(txtcontrol.Text, out Matricula) || txtcontrol.Text == "")
             {
                 errorProvider1.SetError(txtcontrol, "Solo se aceptan numeros  ");
+                txtcontrol.Clear();
+                txtcontrol.Focus();
                 return false;
 
 
@@ -230,6 +251,15 @@ namespace Proyecto__AplicacionB
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Imagenbuscar_Click(object sender, EventArgs e)
+        {
+            if (ValidarCampos ()== false)
+            {
+                return;
+            }
 
         }
     }

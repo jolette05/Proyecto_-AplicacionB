@@ -198,6 +198,7 @@ namespace Proyecto__AplicacionB
             this.Imagenbuscar.Size = new System.Drawing.Size(186, 144);
             this.Imagenbuscar.TabIndex = 11;
             this.Imagenbuscar.TabStop = false;
+            this.Imagenbuscar.Click += new System.EventHandler(this.Imagenbuscar_Click);
             // 
             // imagenactualizar
             // 
@@ -297,20 +298,20 @@ namespace Proyecto__AplicacionB
             this.consultarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1290, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1290, 28);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(52, 26);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
             this.archivoToolStripMenuItem.Text = "Salir";
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(85, 26);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
