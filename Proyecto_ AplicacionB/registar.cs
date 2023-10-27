@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO; 
 
 namespace Proyecto__AplicacionB
 {
     public partial class registar : Form
     {
-        List<ClaseLista> MiLista = new List<ClaseLista>(); 
         public registar()
         {
             InitializeComponent();
@@ -20,8 +20,20 @@ namespace Proyecto__AplicacionB
 
         private void imagenagregar_Click(object sender, EventArgs e)
         {
+            
             try
             {
+                TextWriter GardarDatosEstudiante = new StreamWriter(@"C: \Users\ameri\source\repos\Proyecto_ AplicacionB\Proyecto_ AplicacionB\bin\Debug\" + txtnombre.Text + ".txt", true);
+                GardarDatosEstudiante.WriteLine(txtnombre.Text);
+                GardarDatosEstudiante.WriteLine(txtapellidos.Text);
+                GardarDatosEstudiante.WriteLine(txtcontrol.Text);
+                GardarDatosEstudiante.WriteLine(comboxcarrera.Text);
+                GardarDatosEstudiante.WriteLine(comboBoxgrupo.Text);
+                GardarDatosEstudiante.Close();
+                
+
+
+
                 if (ValidarCampos() == false)
                 {
                     return;
@@ -46,19 +58,8 @@ namespace Proyecto__AplicacionB
                 {
                     return;
                 }
-               
-                if (Existe(txtcontrol.Text))
-                {
-                    errorProvider1.SetError(txtcontrol, "El  numero de control usado ya existe  ");
-                    txtcontrol.Focus();
-                    return;
-
-                }
-                errorProvider1.SetError(txtcontrol, "");
-               
-
-
-
+                MessageBox.Show("Se ha agruegado correctamente los datos ", "Agregando  Estudiante ",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                 DataGridViewRow renglon = (DataGridViewRow)dgvDatosEstudiante.Rows[0].Clone();
@@ -69,6 +70,11 @@ namespace Proyecto__AplicacionB
                 renglon.Cells[4].Value = comboBoxgrupo.Text;
 
                 dgvDatosEstudiante.Rows.Add(renglon);
+
+                txtnombre.Clear();
+                txtapellidos.Clear();
+                txtcontrol.Clear();
+                
             }
             catch (Exception ex)
             {
@@ -77,13 +83,7 @@ namespace Proyecto__AplicacionB
             }
         }
 
-        private bool Existe(string Matricula)
-        {
-            foreach (ClaseLista  MiLista  in MiLista )
-            {
-
-            }
-        }
+        
 
         private bool ValidarMatricula()
         {

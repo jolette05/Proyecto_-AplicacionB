@@ -29,15 +29,18 @@ namespace Proyecto__AplicacionB
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sistema));
             this.botoniniciar = new System.Windows.Forms.Button();
-            this.txtboxcontraseña = new System.Windows.Forms.TextBox();
+            this.txtControl = new System.Windows.Forms.TextBox();
             this.txtboxnombre = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // botoniniciar
@@ -51,13 +54,13 @@ namespace Proyecto__AplicacionB
             this.botoniniciar.UseVisualStyleBackColor = true;
             this.botoniniciar.Click += new System.EventHandler(this.botoniniciar_Click);
             // 
-            // txtboxcontraseña
+            // txtControl
             // 
-            this.txtboxcontraseña.Location = new System.Drawing.Point(379, 306);
-            this.txtboxcontraseña.Multiline = true;
-            this.txtboxcontraseña.Name = "txtboxcontraseña";
-            this.txtboxcontraseña.Size = new System.Drawing.Size(302, 75);
-            this.txtboxcontraseña.TabIndex = 1;
+            this.txtControl.Location = new System.Drawing.Point(379, 306);
+            this.txtControl.Multiline = true;
+            this.txtControl.Name = "txtControl";
+            this.txtControl.Size = new System.Drawing.Size(302, 75);
+            this.txtControl.TabIndex = 1;
             // 
             // txtboxnombre
             // 
@@ -100,6 +103,10 @@ namespace Proyecto__AplicacionB
             this.label1.TabIndex = 5;
             this.label1.Text = "Ingresar al sistema ";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // sistema
             // 
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
@@ -109,11 +116,12 @@ namespace Proyecto__AplicacionB
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtboxnombre);
-            this.Controls.Add(this.txtboxcontraseña);
+            this.Controls.Add(this.txtControl);
             this.Controls.Add(this.botoniniciar);
             this.Name = "sistema";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,11 +130,12 @@ namespace Proyecto__AplicacionB
         #endregion
 
         private System.Windows.Forms.Button botoniniciar;
-        private System.Windows.Forms.TextBox txtboxcontraseña;
+        private System.Windows.Forms.TextBox txtControl;
         private System.Windows.Forms.TextBox txtboxnombre;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
