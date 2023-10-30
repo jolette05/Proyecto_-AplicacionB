@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO; 
+using System.IO;
 
 namespace Proyecto__AplicacionB
 {
@@ -23,22 +23,13 @@ namespace Proyecto__AplicacionB
             
             try
             {
-                TextWriter GardarDatosEstudiante = new StreamWriter(@"C: \Users\ameri\source\repos\Proyecto_ AplicacionB\Proyecto_ AplicacionB\bin\Debug\" + txtnombre.Text + ".txt", true);
-                GardarDatosEstudiante.WriteLine(txtnombre.Text);
-                GardarDatosEstudiante.WriteLine(txtapellidos.Text);
-                GardarDatosEstudiante.WriteLine(txtcontrol.Text);
-                GardarDatosEstudiante.WriteLine(comboxcarrera.Text);
-                GardarDatosEstudiante.WriteLine(comboBoxgrupo.Text);
-                GardarDatosEstudiante.Close();
-                
-
 
 
                 if (ValidarCampos() == false)
                 {
                     return;
                 }
-               
+
 
                 if (ValidarApellidos() == false)
                 {
@@ -74,7 +65,7 @@ namespace Proyecto__AplicacionB
                 txtnombre.Clear();
                 txtapellidos.Clear();
                 txtcontrol.Clear();
-                
+
             }
             catch (Exception ex)
             {
@@ -83,10 +74,11 @@ namespace Proyecto__AplicacionB
             }
         }
 
-        
+
 
         private bool ValidarMatricula()
         {
+            
             int Matricula;
             if (!int.TryParse(txtcontrol.Text, out Matricula) || txtcontrol.Text == "")
             {
@@ -124,7 +116,7 @@ namespace Proyecto__AplicacionB
         }
         private bool ValidarApellidos()
         {
-            if (string.IsNullOrEmpty(txtapellidos.Text))
+             if (string.IsNullOrEmpty(txtapellidos.Text))
             {
 
                 errorProvider1.SetError(txtapellidos, "Debe de ingresar un nombre ");
@@ -138,34 +130,33 @@ namespace Proyecto__AplicacionB
                 return true;
             }
 
-
+            
 
         }
 
 
 
         private bool ValidarGrupo()
+        { if (string.IsNullOrEmpty(comboBoxgrupo.Text))
             {
-                if (string.IsNullOrEmpty(comboBoxgrupo.Text))
-                {
 
-                    errorProvider1.SetError(comboBoxgrupo, "Debe de elegir un grupo ");
-                    return false;
-
-
-                }
-                else
-                {
-                    errorProvider1.SetError(comboBoxgrupo, "");
-                    return true;
-                }
-
+                errorProvider1.SetError(comboBoxgrupo, "Debe de elegir un grupo ");
+                return false;
 
 
             }
-        
-        
-        
+            else
+            {
+                errorProvider1.SetError(comboBoxgrupo, "");
+                return true;
+            }
+
+
+
+        }
+
+
+
         private bool ValidarCarrera()
         {
             if (string.IsNullOrEmpty(comboxcarrera.Text))
@@ -181,21 +172,21 @@ namespace Proyecto__AplicacionB
                 errorProvider1.SetError(comboxcarrera, "");
                 return true;
             }
-               
-        
+
+            
         }
 
 
 
 
-            private void imageneliminar_Click(object sender, EventArgs e)
+        private void imageneliminar_Click(object sender, EventArgs e)
         {
             string mensaje = "¿Desea eliminar los datos del registro  ?";
-            string titulo = "Eliminando el registro "; 
+            string titulo = "Eliminando el registro ";
 
-            if (! ( dgvDatosEstudiante.CurrentRow is null ))
+            if (!(dgvDatosEstudiante.CurrentRow is null))
             {
-                if (MessageBox.Show(mensaje,titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes )
+                if (MessageBox.Show(mensaje, titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     try
                     {
@@ -216,7 +207,7 @@ namespace Proyecto__AplicacionB
                 }
                 else
                 {
-                    MessageBox.Show ("Debes seleccionar un renglon", "Eliminando estudiante ",
+                    MessageBox.Show("Debes seleccionar un renglon", "Eliminando estudiante ",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
@@ -234,33 +225,120 @@ namespace Proyecto__AplicacionB
         {
             if (dgvDatosEstudiante.SelectedRows.Count <= 0)
             {
-                MessageBox.Show("Debes seleccionar un renglon", "Modificando estudiante ",
-                      MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("Debes selecionar un renglon", "Modificando estudiante",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                txtnombre.Text = dgvDatosEstudiante.CurrentRow.Cells["Nombre "].Value.ToString();
-                txtapellidos.Text = dgvDatosEstudiante.CurrentRow.Cells["Apellidos "].Value.ToString();
+               txtnombre.Text = dgvDatosEstudiante.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtapellidos.Text = dgvDatosEstudiante.CurrentRow.Cells["Apellidosusuario"].Value.ToString();
                 txtcontrol.Text = dgvDatosEstudiante.CurrentRow.Cells["Matricula"].Value.ToString();
                 comboxcarrera.Text = dgvDatosEstudiante.CurrentRow.Cells["Carrera"].Value.ToString();
                 comboBoxgrupo.Text = dgvDatosEstudiante.CurrentRow.Cells["Grupo"].Value.ToString();
 
+
+                DataGridViewRow renglon = (DataGridViewRow)dgvDatosEstudiante.Rows[0].Clone();
+                renglon.Cells[0].Value = txtcontrol.Text;
+                renglon.Cells[1].Value = txtnombre.Text;
+                renglon.Cells[2].Value = txtapellidos.Text;
+                renglon.Cells[3].Value = comboxcarrera.Text;
+                renglon.Cells[4].Value = comboBoxgrupo.Text;
+
+                dgvDatosEstudiante.Rows.Add(renglon);
+
             }
+
         }
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            sistema login = new sistema();
+            login.Show();
+            Hide();
         }
 
         private void Imagenbuscar_Click(object sender, EventArgs e)
         {
-            if (ValidarCampos ()== false)
+            if (ValidarCampos() == false)
             {
                 return;
             }
+            else
+            {
 
+
+                string username = txtnombre.Text;
+
+
+
+
+
+
+
+                // Busca el usuario en el DataGridView
+                DataGridViewRow usuario = null;
+
+
+                if (usuario != null)
+                {
+                    // Si se encuentra el usuario
+                    if (usuario.Cells["Nombre"].Value != null)
+                    {
+                        txtnombre.Text = usuario.Cells["Nombre"].Value.ToString();
+                    }
+                    else
+                    {
+                        // Valor de la celda Nombre es null
+                        txtnombre.Text = string.Empty;
+                    }
+
+
+                    foreach (DataGridViewRow row in dgvDatosEstudiante.Rows)
+                    {
+                        if (row.Cells["Nombre"].Value.ToString() == username)
+                        {
+                            usuario = row;
+                            break;
+                        }
+                    }
+
+                    if (usuario != null)
+                    {
+                        // Si se encuentra el usuario, muestra los datos en los campos correspondientes
+                        txtcontrol.Text = usuario.Cells["Matricula "].Value.ToString();
+                        txtnombre.Text = usuario.Cells["Nombre"].Value.ToString();
+                        txtapellidos.Text = usuario.Cells["Apellidosusuario"].Value.ToString();
+                        comboxcarrera.Text = usuario.Cells["Carrera"].Value.ToString();
+                        comboBoxgrupo.Text = usuario.Cells["Grupo"].Value.ToString();
+                    }
+                    else if
+                        { 
+
+                        txtnombre.Text = dgvDatosEstudiante.CurrentRow.Cells["Nombre"].Value.ToString();
+                        txtapellidos.Text = dgvDatosEstudiante.CurrentRow.Cells["Apellidosusuario"].Value.ToString();
+                        txtcontrol.Text = dgvDatosEstudiante.CurrentRow.Cells["Matricula"].Value.ToString();
+                        comboxcarrera.Text = dgvDatosEstudiante.CurrentRow.Cells["Carrera"].Value.ToString();
+                        comboBoxgrupo.Text = dgvDatosEstudiante.CurrentRow.Cells["Grupo"].Value.ToString();
+
+                        // ... Otros campos
+                    }
+                    }
+                    else
+                    {
+                        // Si no se encuentra el usuario, muestra un mensaje de error
+                        MessageBox.Show("Usuario no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+
+
+            }
+        }
+
+        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
+

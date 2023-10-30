@@ -46,32 +46,55 @@ namespace Proyecto__AplicacionB
                 {
                     return;
                 }
-              /*  TextReader Inicio = new StreamReader(txtboxnombre.Text + ".txt");
-                if (Inicio.ReadLine() == txtControl.Text)
+
+
+
+
+                string nombre = txtboxnombre.Text;
+                string matricula = txtControl.Text;
+
+                if (!nombre.Equals("Jolette Manzano ", StringComparison.OrdinalIgnoreCase))
+
                 {
-                    MessageBox.Show("El alumno ingresado ha sido correcto ", " Inicio de Sesion ",
-                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usuario incorrecto ", "Error  ",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+
                 }
-                else
+          
+                if (!matricula.Equals("2391", StringComparison.OrdinalIgnoreCase))
                 {
-                    MessageBox.Show("El nombre o numero de control son incorrectos", " Error de inicio de sesion  ",
-                      MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }*/
+
+                    MessageBox.Show("Contraseña  incorrecta", "Error  ",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+
+                }
+                
+
+              
+
+                    MessageBox.Show("Inicio de sesion exitoso", " Datos correctos  ",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                registar login = new registar();
-                login.Show();
-                Hide();
+                    registar login = new registar();
+                    login.Show();
+                    Hide();
+                
 
 
             }
-            catch(Exception z)
+            catch(Exception x)
             {
-                MessageBox.Show("El usuario no ha sido encontrado "+ z , "Hubo un error ",
-                     MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                MessageBox.Show("Hubo un Error" + x, "Error ");
+                   
+            
+
+
+                }
             }
-        }
         private bool ValidarMatricula()
         {
             int Matricula;
