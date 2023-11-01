@@ -20,7 +20,7 @@ namespace Proyecto__AplicacionB
 
         private void imagenagregar_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
 
@@ -78,7 +78,7 @@ namespace Proyecto__AplicacionB
 
         private bool ValidarMatricula()
         {
-            
+
             int Matricula;
             if (!int.TryParse(txtcontrol.Text, out Matricula) || txtcontrol.Text == "")
             {
@@ -116,7 +116,7 @@ namespace Proyecto__AplicacionB
         }
         private bool ValidarApellidos()
         {
-             if (string.IsNullOrEmpty(txtapellidos.Text))
+            if (string.IsNullOrEmpty(txtapellidos.Text))
             {
 
                 errorProvider1.SetError(txtapellidos, "Debe de ingresar un nombre ");
@@ -130,14 +130,15 @@ namespace Proyecto__AplicacionB
                 return true;
             }
 
-            
+
 
         }
 
 
 
         private bool ValidarGrupo()
-        { if (string.IsNullOrEmpty(comboBoxgrupo.Text))
+        {
+            if (string.IsNullOrEmpty(comboBoxgrupo.Text))
             {
 
                 errorProvider1.SetError(comboBoxgrupo, "Debe de elegir un grupo ");
@@ -173,7 +174,7 @@ namespace Proyecto__AplicacionB
                 return true;
             }
 
-            
+
         }
 
 
@@ -223,31 +224,23 @@ namespace Proyecto__AplicacionB
 
         private void imagenactualizar_Click(object sender, EventArgs e)
         {
-            if (dgvDatosEstudiante.SelectedRows.Count <= 0)
+           if (dgvDatosEstudiante.SelectedRows.Count <= 0)
             {
                 MessageBox.Show("Debes selecionar un renglon", "Modificando estudiante",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-               txtnombre.Text = dgvDatosEstudiante.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtnombre.Text = dgvDatosEstudiante.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtapellidos.Text = dgvDatosEstudiante.CurrentRow.Cells["Apellidosusuario"].Value.ToString();
                 txtcontrol.Text = dgvDatosEstudiante.CurrentRow.Cells["Matricula"].Value.ToString();
                 comboxcarrera.Text = dgvDatosEstudiante.CurrentRow.Cells["Carrera"].Value.ToString();
                 comboBoxgrupo.Text = dgvDatosEstudiante.CurrentRow.Cells["Grupo"].Value.ToString();
 
 
-                DataGridViewRow renglon = (DataGridViewRow)dgvDatosEstudiante.Rows[0].Clone();
-                renglon.Cells[0].Value = txtcontrol.Text;
-                renglon.Cells[1].Value = txtnombre.Text;
-                renglon.Cells[2].Value = txtapellidos.Text;
-                renglon.Cells[3].Value = comboxcarrera.Text;
-                renglon.Cells[4].Value = comboBoxgrupo.Text;
 
-                dgvDatosEstudiante.Rows.Add(renglon);
-
+ 
             }
-
         }
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -263,82 +256,81 @@ namespace Proyecto__AplicacionB
             {
                 return;
             }
-            else
+            //else
+            //}
+
+
+
+
+
+
+            /*
+            // Busca el usuario en el DataGridView
+            DataGridViewRow usuario = null;
+
+
+            if (usuario != null)
             {
-
-
-                string username = txtnombre.Text;
-
-
-
-
-
-
-
-                // Busca el usuario en el DataGridView
-                DataGridViewRow usuario = null;
-
-
-                if (usuario != null)
+                // Si se encuentra el usuario
+                if (usuario.Cells["Nombre"].Value != null)
                 {
-                    // Si se encuentra el usuario
-                    if (usuario.Cells["Nombre"].Value != null)
-                    {
-                        txtnombre.Text = usuario.Cells["Nombre"].Value.ToString();
-                    }
-                    else
-                    {
-                        // Valor de la celda Nombre es null
-                        txtnombre.Text = string.Empty;
-                    }
-
-
-                    foreach (DataGridViewRow row in dgvDatosEstudiante.Rows)
-                    {
-                        if (row.Cells["Nombre"].Value.ToString() == username)
-                        {
-                            usuario = row;
-                            break;
-                        }
-                    }
-
-                    if (usuario != null)
-                    {
-                        // Si se encuentra el usuario, muestra los datos en los campos correspondientes
-                        txtcontrol.Text = usuario.Cells["Matricula "].Value.ToString();
-                        txtnombre.Text = usuario.Cells["Nombre"].Value.ToString();
-                        txtapellidos.Text = usuario.Cells["Apellidosusuario"].Value.ToString();
-                        comboxcarrera.Text = usuario.Cells["Carrera"].Value.ToString();
-                        comboBoxgrupo.Text = usuario.Cells["Grupo"].Value.ToString();
-                    }
-                    else if
-                        { 
-
-                        txtnombre.Text = dgvDatosEstudiante.CurrentRow.Cells["Nombre"].Value.ToString();
-                        txtapellidos.Text = dgvDatosEstudiante.CurrentRow.Cells["Apellidosusuario"].Value.ToString();
-                        txtcontrol.Text = dgvDatosEstudiante.CurrentRow.Cells["Matricula"].Value.ToString();
-                        comboxcarrera.Text = dgvDatosEstudiante.CurrentRow.Cells["Carrera"].Value.ToString();
-                        comboBoxgrupo.Text = dgvDatosEstudiante.CurrentRow.Cells["Grupo"].Value.ToString();
-
-                        // ... Otros campos
-                    }
-                    }
-                    else
-                    {
-                        // Si no se encuentra el usuario, muestra un mensaje de error
-                        MessageBox.Show("Usuario no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    txtnombre.Text = usuario.Cells["Nombre"].Value.ToString();
+                }
+                else
+                {
+                    // Valor de la celda Nombre es null
+                    txtnombre.Text = string.Empty;
                 }
 
 
+                foreach (DataGridViewRow row in dgvDatosEstudiante.Rows)
+                {
+                    if (row.Cells["Nombre"].Value.ToString() == username)
+                    {
+                        usuario = row;
+                        break;
+                    }
+                }
 
+                if (usuario != null)
+                {
+                    // Si se encuentra el usuario, muestra los datos en los campos correspondientes
+                    txtcontrol.Text = usuario.Cells["Matricula "].Value.ToString();
+                    txtnombre.Text = usuario.Cells["Nombre"].Value.ToString();
+                    txtapellidos.Text = usuario.Cells["Apellidosusuario"].Value.ToString();
+                    comboxcarrera.Text = usuario.Cells["Carrera"].Value.ToString();
+                    comboBoxgrupo.Text = usuario.Cells["Grupo"].Value.ToString();
+                }
+                else if
+                    { 
+
+                    txtnombre.Text = dgvDatosEstudiante.CurrentRow.Cells["Nombre"].Value.ToString();
+                    txtapellidos.Text = dgvDatosEstudiante.CurrentRow.Cells["Apellidosusuario"].Value.ToString();
+                    txtcontrol.Text = dgvDatosEstudiante.CurrentRow.Cells["Matricula"].Value.ToString();
+                    comboxcarrera.Text = dgvDatosEstudiante.CurrentRow.Cells["Carrera"].Value.ToString();
+                    comboBoxgrupo.Text = dgvDatosEstudiante.CurrentRow.Cells["Grupo"].Value.ToString();
+
+                    // ... Otros campos
+                }
+                }
+                else
+                {
+                    // Si no se encuentra el usuario, muestra un mensaje de error
+                    MessageBox.Show("Usuario no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            */
+
+
         }
 
         private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             Application.Exit();
         }
     }
+
+ 
 }
 

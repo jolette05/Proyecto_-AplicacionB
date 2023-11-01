@@ -46,10 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarMaestros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarMaestros.Designer.cs">
+      <DependentUpon>AgregarMaestros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuienInicia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuienInicia.Designer.cs">
+      <DependentUpon>QuienInicia.cs</DependentUpon>
     </Compile>
     <Compile Include="registar.cs">
       <SubType>Form</SubType>
@@ -65,6 +77,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AgregarMaestros.resx">
+      <DependentUpon>AgregarMaestros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IngresoSistema.resx">
       <DependentUpon>IngresoSistema.cs</DependentUpon>
     </EmbeddedResource>
@@ -72,6 +87,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuienInicia.resx">
+      <DependentUpon>QuienInicia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="registar.resx">
       <DependentUpon>registar.cs</DependentUpon>
@@ -112,6 +130,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Captura de pantalla 2023-10-25 224829.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-10-30 231612.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-10-30 231722.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-10-30 2316121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alumno.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

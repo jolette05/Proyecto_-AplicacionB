@@ -59,6 +59,7 @@ namespace Proyecto__AplicacionB
             this.txtControl.Location = new System.Drawing.Point(379, 306);
             this.txtControl.Multiline = true;
             this.txtControl.Name = "txtControl";
+            this.txtControl.PasswordChar = '*';
             this.txtControl.Size = new System.Drawing.Size(302, 75);
             this.txtControl.TabIndex = 1;
             // 

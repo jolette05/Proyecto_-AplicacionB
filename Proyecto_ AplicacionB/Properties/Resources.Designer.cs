@@ -73,6 +73,16 @@ namespace Proyecto__AplicacionB.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alumno {
+            get {
+                object obj = ResourceManager.GetObject("alumno", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_pantalla_2023_10_23_183238 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2023-10-23 183238", resourceCulture);
@@ -96,6 +106,36 @@ namespace Proyecto__AplicacionB.Properties {
         internal static System.Drawing.Bitmap Captura_de_pantalla_2023_10_25_224829 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2023-10-25 224829", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2023_10_30_231612 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2023-10-30 231612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2023_10_30_2316121 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2023-10-30 2316121", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2023_10_30_231722 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2023-10-30 231722", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
