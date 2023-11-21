@@ -57,11 +57,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="QuienInicia.cs">
+    <Compile Include="Accion a Realizar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuienInicia.Designer.cs">
-      <DependentUpon>QuienInicia.cs</DependentUpon>
+      <DependentUpon>Accion a Realizar.cs</DependentUpon>
     </Compile>
     <Compile Include="registar.cs">
       <SubType>Form</SubType>
@@ -89,7 +89,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="QuienInicia.resx">
-      <DependentUpon>QuienInicia.cs</DependentUpon>
+      <DependentUpon>Accion a Realizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="registar.resx">
       <DependentUpon>registar.cs</DependentUpon>
@@ -142,6 +142,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\alumno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Despensa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Despensa1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Estanteria.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estanteria2.0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cchico comprando.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chica comprando.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-11-20 233204.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

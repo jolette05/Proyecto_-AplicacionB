@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto__AplicacionB
 {
-    public partial class QuienInicia : Form
+    public partial class AccionaRealizar : Form
     {
-        public QuienInicia()
+        public AccionaRealizar()
         {
             InitializeComponent();
         }
@@ -33,6 +33,16 @@ namespace Proyecto__AplicacionB
             registar login = new registar();
             login.Show();
             Hide();
+        }
+
+        private void QuienInicia_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picBoxClientes_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }

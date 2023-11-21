@@ -47,28 +47,28 @@ namespace Proyecto__AplicacionB
             // 
             this.botoniniciar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botoniniciar.BackgroundImage")));
             this.botoniniciar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botoniniciar.Location = new System.Drawing.Point(897, 357);
+            this.botoniniciar.Location = new System.Drawing.Point(1049, 390);
             this.botoniniciar.Name = "botoniniciar";
-            this.botoniniciar.Size = new System.Drawing.Size(225, 122);
+            this.botoniniciar.Size = new System.Drawing.Size(183, 96);
             this.botoniniciar.TabIndex = 0;
             this.botoniniciar.UseVisualStyleBackColor = true;
             this.botoniniciar.Click += new System.EventHandler(this.botoniniciar_Click);
             // 
             // txtControl
             // 
-            this.txtControl.Location = new System.Drawing.Point(379, 306);
+            this.txtControl.Location = new System.Drawing.Point(364, 301);
             this.txtControl.Multiline = true;
             this.txtControl.Name = "txtControl";
             this.txtControl.PasswordChar = '*';
-            this.txtControl.Size = new System.Drawing.Size(302, 75);
+            this.txtControl.Size = new System.Drawing.Size(336, 73);
             this.txtControl.TabIndex = 1;
             // 
             // txtboxnombre
             // 
-            this.txtboxnombre.Location = new System.Drawing.Point(379, 121);
+            this.txtboxnombre.Location = new System.Drawing.Point(364, 111);
             this.txtboxnombre.Multiline = true;
             this.txtboxnombre.Name = "txtboxnombre";
-            this.txtboxnombre.Size = new System.Drawing.Size(302, 72);
+            this.txtboxnombre.Size = new System.Drawing.Size(351, 65);
             this.txtboxnombre.TabIndex = 2;
             this.txtboxnombre.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -76,9 +76,9 @@ namespace Proyecto__AplicacionB
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(116, 74);
+            this.pictureBox1.Location = new System.Drawing.Point(116, 62);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(215, 158);
+            this.pictureBox1.Size = new System.Drawing.Size(195, 149);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
@@ -89,7 +89,7 @@ namespace Proyecto__AplicacionB
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(116, 273);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(215, 146);
+            this.pictureBox2.Size = new System.Drawing.Size(195, 137);
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
@@ -98,7 +98,7 @@ namespace Proyecto__AplicacionB
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(456, 18);
+            this.label1.Location = new System.Drawing.Point(482, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(260, 32);
             this.label1.TabIndex = 5;
@@ -112,7 +112,7 @@ namespace Proyecto__AplicacionB
             // 
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1177, 508);
+            this.ClientSize = new System.Drawing.Size(1253, 508);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);

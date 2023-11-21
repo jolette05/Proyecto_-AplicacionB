@@ -78,7 +78,7 @@ namespace Proyecto__AplicacionB
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                    QuienInicia login = new QuienInicia ();
+                    AccionaRealizar login = new AccionaRealizar ();
                     login.Show();
                     Hide();
                 
