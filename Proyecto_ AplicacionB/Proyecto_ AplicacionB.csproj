@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarMaestros.cs">
+    <Compile Include="HistorialVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarMaestros.Designer.cs">
-      <DependentUpon>AgregarMaestros.cs</DependentUpon>
+    <Compile Include="HistorialVentas.Designer.cs">
+      <DependentUpon>HistorialVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -77,8 +77,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AgregarMaestros.resx">
-      <DependentUpon>AgregarMaestros.cs</DependentUpon>
+    <EmbeddedResource Include="HistorialVentas.resx">
+      <DependentUpon>HistorialVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IngresoSistema.resx">
       <DependentUpon>IngresoSistema.cs</DependentUpon>
@@ -163,6 +163,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Captura de pantalla 2023-11-20 233204.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-11-21 231130.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-11-21 231314.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -76,7 +76,7 @@ namespace Proyecto__AplicacionB
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(116, 62);
+            this.pictureBox1.Location = new System.Drawing.Point(116, 44);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(195, 149);
             this.pictureBox1.TabIndex = 3;

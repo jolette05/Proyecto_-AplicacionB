@@ -153,6 +153,26 @@ namespace Proyecto__AplicacionB.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2023_11_21_231130 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2023-11-21 231130", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2023_11_21_231314 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2023-11-21 231314", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cchico_comprando {
             get {
                 object obj = ResourceManager.GetObject("cchico comprando", resourceCulture);

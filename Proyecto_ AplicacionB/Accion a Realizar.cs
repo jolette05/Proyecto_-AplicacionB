@@ -23,7 +23,7 @@ namespace Proyecto__AplicacionB
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            AgregarMaestros login = new AgregarMaestros();
+            historial_ventas login = new historial_ventas();
             login.Show();
             Hide();
         }
